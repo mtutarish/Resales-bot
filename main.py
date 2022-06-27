@@ -86,7 +86,7 @@ def main():
                     try:
                         floor_market = 'disintar' if floor['disintar'][0] < floor['getgems'][0] else 'getgems'
                         floor_price, floor_link = floor[floor_market]
-                        floor_text = f'🔽 <b>Current <a href="{floor_link}">floor</a>:</b> {floor_price} TON'
+                        floor_text = f'📉 <b>Current <a href="{floor_link}">floor</a>:</b> {floor_price} TON'
                         if price <= floor_price * 1.1:
                             emoji = '🍣'
                     except:
@@ -100,7 +100,7 @@ def main():
                     except:
                         dollars_text = ''
                         print('Get Dollars Failed')
-                    message_text = f'👾 <b><a href="https://explorer.tonnft.tools/nft/{nft_address}">{name}</a></b>\n\n' \
+                    message_text = f'🦆 <b><a href="https://explorer.tonnft.tools/nft/{nft_address}">{name}</a></b>\n\n' \
                                    f'' \
                                    f'{emoji} #Purchased for <b>{price} TON {dollars_text} on {market}</b>\n\n' \
                                    '' \
@@ -114,7 +114,6 @@ def main():
                             try:
                                 bot.sendMessage(chat, message_text, parse_mode='HTML', disable_web_page_preview=True)
                             except Exception as e:
-                                print(f'Message Send ({chat}) Failed: {e}')
     except Exception as e:
         open(f'{current_path}/LastSaleDatetime', 'w').write(old_utime)
         print(e)
