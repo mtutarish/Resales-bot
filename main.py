@@ -113,9 +113,9 @@ def main():
                             print(f'Photo Send ({chat}) Failed: {e}')
                             try:
                                 bot.sendMessage(chat, message_text, parse_mode='HTML', disable_web_page_preview=True)
-                            except Exception as e:
+                           except Exception as e:
+                                print(f'Message Send ({chat}) Failed: {e}')
     except Exception as e:
-        open(f'{current_path}/LastSaleDatetime', 'w').write(old_utime)
         print(e)
 
 
